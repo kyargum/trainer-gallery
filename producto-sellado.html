@@ -22,60 +22,174 @@
   <meta name="description" content="Producto sellado para cambio - Alejandro Bermudez" />
   <meta name="image" content="https://kyargum.github.io/trainer-gallery/sellado/varias.jpg" />
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+
+  <script>
+	
+	var root = "https://kyargum.github.io/trainer-gallery/sellado/";
+	var imgs = [
+	"151-Alakazam",
+	"151-Binder",
+	"151-poster",
+	"151-upc-esp",
+	"151-varias",
+	"151-zapdos",
+	"astral-radiance-stadium",
+	"blastoise-vmax",
+	"brilliant-stars-booster-box",
+	"celebrations-prime",
+	"corwn-zenith-tin",
+	"crown-zenith-bundle",
+	"darkness-booster",
+	"deck-2017-kabu-samurai",
+	"deck-2017-naoto-golisooor",
+	"deck-2017-zachary-ice",
+	"deck-2018-naohito-buzzroc",
+	"etbs-varias",
+	"fates-varias",
+	"journey-booster-box-1",
+	"journey-booster-box-2",
+	"journey-together-zacian",
+	"pokeball-varias",
+	"prismatic-leafeon",
+	"prismatic-surprise",
+	"shining-fates-crobat",
+	"shining-fates-dragapult",
+	"shining-fates-elite",
+	"shining-fates-pikachu",
+	"shining-legends-elite",
+	"surging-sparks-elite",
+	"sword-and-shield-super-elite",
+	"venusaur-vmax"];
+  </script>
 <style>
-span {
-  width: 80px;
-  height: 100px;
-  overflow: hidden;
-  display: inline-block;
-  background-color: red;
-  margin: -2px;
-}
-img {
-  height: 130%;
-  -webkit-transform: translate(-10%,-4%);
-}
-/* .thumbnail img.portrait {
+
+.product {
+  position: relative;
   width: 100%;
-  height: auto;
-} */
+  padding-top: 100%; /* Maintain square aspect ratio */
+  margin-bottom: 10px; /* Ensure there's space below each image */
+  overflow: hidden;
+}
+
+.product img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2); /* Apply 20% zoom */
+  transform-origin: 50% 20%; /* Move the center of the zoom 20% from the top */
+}
+
+
+
+/* Make the modal fullscreen */
+.modal-dialog {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Adjust the modal content to make it scrollable */
+.modal-content {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the body of the modal scrollable */
+.modal-body {
+  overflow: auto;
+  flex-grow: 1; /* Ensure the body takes up remaining space */
+}
+
+/* Ensure the image maintains its aspect ratio and fits within the modal */
+#modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Keep the close button visible */
+.modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 1050; /* Ensure it's on top of the image */
+  background-color: rgba(255, 255, 255, 0.9); /* Slight background for visibility */
+}
+
+
+
+
+
 </style>
 </head>
+
 <body style="padding: 50px;">
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/151-Alakazam.jpg" alt="151-Alakazam"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/151-Binder.jpg" alt="151-Binder"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/151-poster.jpg" alt="151-poster"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/151-upc-esp.jpg" alt="151-upc-esp"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/151-varias.jpg" alt="151-varias"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/151-zapdos.jpg" alt="151-zapdos"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/astral-radiance-stadium.jpg" alt="astral-radiance-stadium"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/blastoise-vmax.jpg" alt="blastoise-vmax"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/brilliant-stars-booster-box.jpg" alt="brilliant-stars-booster-box"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/celebrations-prime.jpg" alt="celebrations-prime"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/corwn-zenith-tin.jpg" alt="corwn-zenith-tin"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/crown-zenith-bundle.jpg" alt="crown-zenith-bundle"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/darkness-booster.jpg" alt="darkness-booster"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/deck-2017-kabu-samurai.jpg" alt="deck-2017-kabu-samurai"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/deck-2017-naoto-golisooor.jpg" alt="deck-2017-naoto-golisooor"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/deck-2017-zachary-ice.jpg" alt="deck-2017-zachary-ice"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/deck-2018-naohito-buzzroc.jpg" alt="deck-2018-naohito-buzzroc"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/etbs-varias.jpg" alt="etbs-varias"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/fates-varias.jpg" alt="fates-varias"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/journey-booster-box-1.jpg" alt="journey-booster-box-1"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/journey-booster-box-2.jpg" alt="journey-booster-box-2"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/journey-together-zacian.jpg" alt="journey-together-zacian"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/pokeball-varias.jpg" alt="pokeball-varias"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/prismatic-leafeon.jpg" alt="prismatic-leafeon"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/prismatic-surprise.jpg" alt="prismatic-surprise"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/shining-fates-crobat.jpg" alt="shining-fates-crobat"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/shining-fates-dragapult.jpg" alt="shining-fates-dragapult"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/shining-fates-elite.jpg" alt="shining-fates-elite"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/shining-fates-pikachu.jpg" alt="shining-fates-pikachu"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/shining-legends-elite.jpg" alt="shining-legends-elite"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/surging-sparks-elite.jpg" alt="surging-sparks-elite"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/sword-and-shield-super-elite.jpg" alt="sword-and-shield-super-elite"/></span>
-	<span><img src="https://kyargum.github.io/trainer-gallery/sellado/venusaur-vmax.jpg" alt="venusaur-vmax"/></span>
+
+	<div class="container">
+		<div class="row" id="images">
+		</div>
+	  </div>
+
+	<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="imageModalLabel">Product Image</h5>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+			  <img id="modalImage" src="" class="img-fluid" alt="Product Image">
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+<script>
+imgs.forEach(img => {
+    var str = `
+    <div class="col-6 col-md-4 col-lg-3">
+        <div class="product">
+            <img src="${root}${img}.jpg" alt="${img}" class="img-fluid">
+        </div>
+    </div>`;
+    $("#images").append(str);
+});
+
+document.querySelectorAll('.product img').forEach(item => {
+item.addEventListener('click', function () {
+const imgSrc = this.src;
+const imgAlt = this.alt.replace(/-/g, ' ').toUpperCase();
+
+// Set the modal image source and alt attributes
+document.getElementById('modalImage').src = imgSrc;
+document.getElementById('modalImage').alt = this.alt;
+
+// Set the modal title with modified alt text
+document.getElementById('imageModalLabel').textContent = imgAlt;
+
+var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+	myModal.show();});
+});
+
+document.addEventListener('click', function (e) {
+  const modal = document.getElementById('imageModal');
+  const myModal = bootstrap.Modal.getInstance(modal);
+  myModal.hide();
+});
+
+</script>
 </body>
 </HTML>
