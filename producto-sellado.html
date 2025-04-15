@@ -30,40 +30,41 @@
   <script>
 	
 	var root = "https://kyargum.github.io/trainer-gallery/sellado/";
-	var imgs = [
-	"151-Alakazam",
-	"151-Binder",
-	"151-poster",
-	"151-upc-esp",
-	"151-varias",
-	"151-zapdos",
-	"astral-radiance-stadium",
-	"blastoise-vmax",
-	"brilliant-stars-booster-box",
-	"celebrations-prime",
-	"corwn-zenith-tin",
-	"crown-zenith-bundle",
-	"darkness-booster",
-	"deck-2017-kabu-samurai",
-	"deck-2017-naoto-golisooor",
-	"deck-2017-zachary-ice",
-	"deck-2018-naohito-buzzroc",
-	"etbs-varias",
-	"fates-varias",
-	"journey-booster-box-1",
-	"journey-booster-box-2",
-	"journey-together-zacian",
-	"pokeball-varias",
-	"prismatic-leafeon",
-	"prismatic-surprise",
-	"shining-fates-crobat",
-	"shining-fates-dragapult",
-	"shining-fates-elite",
-	"shining-fates-pikachu",
-	"shining-legends-elite",
-	"surging-sparks-elite",
-	"sword-and-shield-super-elite",
-	"venusaur-vmax"];
+	var products = [
+	{name:"151-Alakazam", id:502006},
+	{name:"151-Binder", id:502004},
+	{name:"151-poster", id:502001},
+	{name:"151-upc-esp", id:502005},
+	{name:"151-varias", id:504467},
+	{name:"151-zapdos", id:502007},
+	{name:"astral-radiance-stadium", id:265515},
+	{name:"brilliant-stars-booster-box", id:256141},
+	{name:"celebrations-prime", id:252416},
+	{name:"corwn-zenith-tin", id:475635},
+	{name:"crown-zenith-bundle", id:527562},
+	{name:"darkness-booster", id:216853},
+	{name:"deck-2017-kabu-samurai", id:175268},
+	{name:"deck-2017-naoto-golisooor", id:175265},
+	{name:"deck-2017-zachary-ice", id:175266},
+	{name:"deck-2018-naohito-buzzroc", id:181129},
+	{name:"etbs-varias", id:256138},
+	{name:"fates-varias", id:232636},
+	{name:"journey-booster-box-1", id:623628},
+	{name:"journey-booster-box-2", id:623628},
+	{name:"journey-together-zacian", id:616303},
+	{name:"pokeball-varias", id:516946},
+	{name:"prismatic-leafeon", id:593453},
+	{name:"prismatic-surprise", id:593466},
+	{name:"shining-fates-crobat", id:230391},
+	{name:"shining-fates-dragapult", id:230392},
+	{name:"shining-fates-elite", id:228821},
+	{name:"shining-fates-pikachu", id:228825},
+	{name:"shining-legends-elite", id:145847},
+	{name:"surging-sparks-elite", id:565630},
+	{name:"sword-and-shield-super-elite", id:222987},
+	{name:"sword-and-shield-blastoise-vmax", id:231295},
+	{name:"sword-and-shield-venusaur-vmax", id:231294}
+	];
   </script>
 <style>
 
@@ -141,16 +142,20 @@
 
 <body style="padding: 50px;" >
 	
-	<nav class="navbar sticky-top" style="background-color: black; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
-		<a class="navbar-brand" href="#">Colección de Alejandro Bermúdez</a>
-		<ul class="navbar-nav">
-			  <li class="nav-item">
-				<a class="nav-link" href="https://kyargum.github.io/trainer-gallery/producto-sellado">Producto Sellado</a>
-			  </li>
-			  <li class="nav-item active">
-				<a class="nav-link" href="https://kyargum.github.io/trainer-gallery">Cartas que Busco</a>
-			  </li>
-		</ul>
+	<nav class="navbar navbar-expand navbar-dark fixed-top bg-dark" style="padding-left: 70px;">
+		<a class="navbar-brand" href="#">Alejandro Bermúdez</a>
+		<div class="navbar-expand">
+		  <ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+			  <span class="nav-link active text-decoration-underline">Producto Sellado </span>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="https://kyargum.github.io/trainer-gallery">
+				Cartas que busco
+			  </a>
+			</li>
+		  </ul>
+		</div>
 	  </nav>
 	
 
@@ -169,16 +174,24 @@
 			<div class="modal-body">
 			  <img id="modalImage" src="" class="img-fluid" alt="Product Image">
 			</div>
+			
+			<div class="modal-footer">
+				<div class="container text-center">
+					<a id="modalLink" href="#" class="">
+						<button type="button" class="btn btn-primary">Ver en TcgPlayer.com</button>	
+					</a>
+				</div>
+			  </div>
 		  </div>
 		</div>
 	  </div>
 
 <script>
-imgs.forEach(img => {
+products.forEach(product => {
     var str = `
     <div class="col-6 col-md-4 col-lg-3">
         <div class="product">
-            <img src="${root}${img}.jpg" alt="${img}" class="img-fluid">
+            <img src="${root}${product.name}.jpg" alt="${product.name}" class="img-fluid" data="${product.id}">
         </div>
     </div>`;
     $("#images").append(str);
@@ -186,12 +199,14 @@ imgs.forEach(img => {
 
 document.querySelectorAll('.product img').forEach(item => {
 item.addEventListener('click', function () {
-const imgSrc = this.src;
+const product_src = this.src;
 const imgAlt = this.alt.replace(/-/g, ' ').toUpperCase();
+const href = "https://www.tcgplayer.com/product/$product_id?Language=English".replace('$product_id', this.attributes.data.value);
 
 // Set the modal image source and alt attributes
-document.getElementById('modalImage').src = imgSrc;
+document.getElementById('modalImage').src = product_src;
 document.getElementById('modalImage').alt = this.alt;
+document.getElementById('modalLink').href = href;
 
 // Set the modal title with modified alt text
 document.getElementById('imageModalLabel').textContent = imgAlt;
