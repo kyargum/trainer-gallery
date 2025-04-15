@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <title>Cartas que Busco</title>
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Cartas que busco" />
@@ -119,36 +120,67 @@
 <body style="padding: 50px;">
   
 	<nav class="navbar navbar-expand navbar-dark fixed-top bg-dark" style="padding-left: 70px;">
+    <a href="https://www.facebook.com/KyrieAlejandro">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
+        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+      </svg>
+    </a>
 		<a class="navbar-brand" href="#">
-      <small style="line-height: 0%;display: block;">
+      <small style="line-height: 10%;display: block;">
         Alejandro
       </small>
       <small style="margin-left: 10px;">
         Bermúdez
       </small>
     </a>
-    
-  <a href="https://www.facebook.com/KyrieAlejandro">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
-      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-    </svg>
-  </a>
 		<div class="navbar-expand">
 		  <ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-			  <a class="nav-link" href="https://kyargum.github.io/trainer-gallery/producto-sellado">
-				Producto Sellado
-			  </a>
-			</li>
-			<li class="nav-item">
-        <span class="nav-link active text-decoration-underline">Cartas que busco</span>
-			  </a>
-			</li>
+        
+				<li class="nav-item">
+					<a class="nav-link" href="https://kyargum.github.io/trainer-gallery">
+						<span style="display: inline-block;">
+							<small>
+								Producto
+							</small>
+							<small style="line-height: 10%;display: block;">
+								Sellado
+							</small>
+						</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<span class="nav-link active">
+            <span style="vertical-align: top;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+								<path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+							</svg>
+						</span>
+						<span style="display: inline-block;">
+							<small>
+								Cartas
+							</small>
+							<small style="line-height: 10%;display: block;">
+								que busco
+							</small>
+						</span>
+					</span>
+				</li>
 		  </ul>
 		</div>
 	  </nav>
 
+
   <div class="container">
+    <div class="row" style="margin-top: 12px;">
+      <div class="col-12">
+        <p >
+          Estas son las cartas que más me interesan de momento.
+        Si las tienes para venta o cambio, me puedes mandar un mensaje.
+        Puedes ver lo que tengo para cambio aqui:
+        <a class="inline-block" href="https://kyargum.github.io/trainer-gallery/producto-sellado">Producto Sellado</a>
+        </p>
+      </div>
+		</div>
     <div id="images"></div>
   </div>
   <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -180,7 +212,6 @@ item.addEventListener('click', function () {
   const imgAlt = this.alt.replace(/-/g, ' ').toUpperCase();
 
   // Set the modal image source and alt attributes
-  debugger
   document.getElementById('modalImage').src = `https://tcgplayer-cdn.tcgplayer.com/product/${this.name}_in_600x600.jpg`;
   document.getElementById('modalImage').alt = this.alt;
 
